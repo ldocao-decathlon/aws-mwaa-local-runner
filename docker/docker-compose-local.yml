@@ -11,7 +11,7 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - "${PWD}/db-data:/var/lib/postgresql/data"
+            - "${DIGITAL_ANALYTICS_HOME}/airflow/db-data:/var/lib/postgresql/data"
 
     local-runner:
         image: amazon/mwaa-local:2.0.2
