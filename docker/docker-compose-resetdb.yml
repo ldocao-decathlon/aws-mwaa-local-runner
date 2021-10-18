@@ -11,7 +11,7 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - "${PWD}/db-data:/var/lib/postgresql/data"
+            - "${DIGITAL_ANALYTICS_HOME}/airflow/db-data:/var/lib/postgresql/data"
 
     resetdb:
         image: amazon/mwaa-local:2.0
@@ -25,8 +25,8 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - ${PWD}/dags:/usr/local/airflow/dags
-            - ${PWD}/plugins:/usr/local/airflow/plugins
+            - ${DIGITAL_ANALYTICS_HOME}/airflow/dags:/usr/local/airflow/dags
+            - ${DIGITAL_ANALYTICS_HOME}/airflow/plugins:/usr/local/airflow/plugins
         ports:
             - "8080:8080"
         command: resetdb
