@@ -28,6 +28,7 @@ services:
         volumes:
             - ${DIGITAL_ANALYTICS_HOME}/airflow/dags:/usr/local/airflow/dags
             - ${DIGITAL_ANALYTICS_HOME}/airflow/plugins:/usr/local/airflow/plugins
+            - ${DIGITAL_ANALYTICS_HOME}/airflow/logs:/usr/local/airflow/logs
         ports:
             - "8080:8080"
         command: local-runner
