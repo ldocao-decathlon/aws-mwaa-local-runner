@@ -2,6 +2,7 @@ version: '3.7'
 services:
     postgres:
         image: postgres:10-alpine
+        user: "<uid>:<gid>"
         environment:
             - POSTGRES_USER=airflow
             - POSTGRES_PASSWORD=airflow
@@ -11,7 +12,7 @@ services:
                 max-size: 10m
                 max-file: "3"
         volumes:
-            - "${DIGITAL_ANALYTICS_HOME}/airflow/db-data:/var/lib/postgresql/data:z"
+            - "${DIGITAL_ANALYTICS_HOME}/airflow/db-data:/var/lib/postgresql/data"
 
     local-runner:
         image: amazon/mwaa-local:2.0.2
